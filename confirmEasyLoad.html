@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="exampleDialog" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Telenor</title>
+
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/jquery.mobile.min.css">
+<link rel="stylesheet" href="css/leaflet.css" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/ngDialog.css" />
+<link rel="stylesheet" href="css/ngDialog-theme-default.css" /> 
+
+<script src="js/app.js"></script>
+<script src="phonegap.js"></script>
+
+</head>
+
+<body ng-controller="MainCtrl">
+
+ <script type="text/ng-template" id="firstDialogId">
+        <div class="ngdialog-message">
+            <h3 class="dialogHead">Successfully Transferred</h3>
+            <p ng-show="dialogModel.message" class="dialogDetail">ID  123456790</p>
+            <p ng-show="dialogModel.message" class="dialogAmt"><font class="pkr" size="2px">PKR</font>  3,000<font class="pkr" size="2px">.00</font></p>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button ngdialog-button-secondary"
+                ng-dialog-class="ngdialog-theme-default"
+                ng-dialog-class="ngdialog-close" ng-click="closeThisDialog()">OK</button>
+        </div>
+    </script>
+    
+    <div class="container-fluid">
+ <div class="row">
+	<div class="topHeader ">	</div>
+     <div class="pull-left"> <img src="images/easypaisa_icon.png" class="iconTlnr" /></div>
+    <div class="midHeader ">Easy Load</div>
+    </div> <!--header row ends-->
+    
+   </div> <!--header container ends-->
+    
+    <div class="container-fluid">
+    <div class="row" >    
+            
+    <div class="confirmPage">
+    
+    <div class="rowStyle">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <label class="dataLabel">Mobile Number</label>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <label class="dataReturned">0345-1234567</label>
+    </div>
+    </div>
+    <div class="rowStyle">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <label class="dataLabel">Amount</label>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <label class="dataReturned easyLoad"><font class="pkrContent" size="2px">PKR</font> 3,000.<font size="2px">00</font></label>
+    </div>
+    </div>
+    <div class="rowStyle">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <label class="dataLabel">Date</label>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <label class="dataReturned">Thursday, 4 June 2015</label>
+    </div>
+    </div>
+    
+    <p class="confirmText">By clicking "Confirm" you agree to abide by the Terms and Conditions.</p>
+    <input type="submit" class="confirmBtn center-block" value="Confirm" ng-click="openDefault()"/> 
+   
+    </div> <!--confirm page div ends-->
+    <div class="footer"> <p class="pull-left footerTxt">Settings</p><div><img src="images/telenor_icon1.png" class="footerLogo pull-right" /></div></div>
+    
+    </div> <!--row ends-->
+       
+
+
+</div> <!--Main container-fluid Ends-->
+
+ </div><!--Top container-fluid Ends-->
+ <script src="js/angular.min.js"></script>
+    <script>window.angular || document.write('<script src="js/angular.min.js">\x3C/script>')</script>
+<script src="js/ngDialog.js"> </script>
+ <!-- APP -->
+ 
+ <script>
+        var app = angular.module('exampleDialog', ['ngDialog']);
+
+        // Example of how to set default values for all dialogs
+        app.config(['ngDialogProvider', function (ngDialogProvider) {
+            ngDialogProvider.setDefaults({
+                className: 'ngdialog-theme-default',
+                plain: false,
+                showClose: false,
+                closeByDocument: true,
+                closeByEscape: true,
+                appendTo: false,
+                preCloseCallback: function () {
+                    console.log('default pre-close callback');
+                }
+            });
+        }]);
+		
+		 app.controller('MainCtrl', function ($scope, $rootScope, ngDialog, $timeout) {
+            $rootScope.jsonData = '{"foo": "bar"}';
+            $rootScope.theme = 'ngdialog-theme-default';
+
+            $scope.directivePreCloseCallback = function (value) {
+                if(confirm('Close it? MainCtrl.Directive. (Value = ' + value + ')')) {
+                    return true;
+                }
+                return false;
+            };
+
+            $scope.preCloseCallbackOnScope = function (value) {
+                if(confirm('Close it? MainCtrl.OnScope (Value = ' + value + ')')) {
+                    return true;
+                }
+                return false;
+            };
+
+            $scope.open = function () {
+                var new_dialog = ngDialog.open({ template: 'firstDialogId', controller: 'InsideCtrl', data: {foo: 'some data'} });
+
+                                // example on checking whether created `new_dialog` is open
+                                $timeout(function() {
+                                    console.log(ngDialog.isOpen(new_dialog.id));
+                                }, 2000)
+            };
+
+            $scope.openDefault = function () {
+                ngDialog.open({
+                    template: 'firstDialogId',
+                    controller: 'InsideCtrl',
+                    className: 'ngdialog-theme-default'
+                });
+            };
+
+            $scope.openDefaultWithPreCloseCallbackInlined = function () {
+                ngDialog.open({
+                    template: 'firstDialogId',
+                    controller: 'InsideCtrl',
+                    className: 'ngdialog-theme-default',
+                    preCloseCallback: function(value) {
+                        if (confirm('Close it?  (Value = ' + value + ')')) {
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+            };
+
+           
+            $rootScope.$on('ngDialog.opened', function (e, $dialog) {
+                console.log('ngDialog opened: ' + $dialog.attr('id'));
+            });
+
+            $rootScope.$on('ngDialog.closed', function (e, $dialog) {
+                console.log('ngDialog closed: ' + $dialog.attr('id'));
+            });
+
+            $rootScope.$on('ngDialog.closing', function (e, $dialog) {
+                console.log('ngDialog closing: ' + $dialog.attr('id'));
+            });
+        });
+
+        app.controller('InsideCtrl', function ($scope, ngDialog) {
+            $scope.dialogModel = {
+                message : 'message from passed scope'
+            };
+            $scope.openSecond = function () {
+                ngDialog.open({
+                    template: '<h3><a href="" ng-click="closeSecond()">Close all by click here!</a></h3>',
+                    plain: true,
+                    closeByEscape: false,
+                    controller: 'SecondModalCtrl'
+                });
+            };
+        });
+
+        app.controller('SecondModalCtrl', function ($scope, ngDialog) {
+            $scope.closeSecond = function () {
+                ngDialog.close();
+            };
+        });
+    </script>
+
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<script src="js/ui-bootstrap-tpls-0.6.0.js" type="text/javascript"></script>
+<script src="js/angular-strap.js"></script>
+<script src="js/angular-strap.tpl.js"></script>
+</body>
+</html>

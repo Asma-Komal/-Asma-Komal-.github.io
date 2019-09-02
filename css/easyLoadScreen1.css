@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face
+	{
+		font-family: submitButtonFont;
+		src:url(../fonts/regular.ttf);
+	}
+	
+.formFieldAccount,.formFieldMobile,.easyLoadText,.setting
+	{
+		font-family:submitButtonFont;
+		font-size:medium;
+		font-style:normal;
+		font-weight:normal !important;
+	}
+
+.topHeader
+	{
+		background:url(../images/header3.png) center;
+		background-size:cover;
+		height:93px;
+		border-bottom:1px #FFFFFF solid;
+	}
+
+.easyLoadText
+	{
+		color:#FFFFFF;
+		text-align:center;
+		padding-top:15px;
+	}	
+	
+.midHeader
+	{
+		background-image:url(../images/header2.png);
+		background-size:cover;
+		height:55px;
+		width:100%;
+		margin-bottom:50px;
+	}
+	
+.submitButton
+	{
+		margin-top:2px;
+		
+	}
+	
+.btn
+	{
+		border-radius:0;
+		border:none;
+		background-color:rgb(138,176,12);
+		width:75px;
+		height:35px;
+		font-family:submitButtonFont;
+		font-size:large;
+		font-weight:normal;
+		margin-bottom:40px;
+	}
+
+.footer
+	{
+		background-image:url(../images/footer1.png);
+		background-repeat:no-repeat;
+		width:100%;
+		background-size:100% 100%;
+		bottom:0;
+		min-height:60px !important;
+	}
+
+.footerImage2
+	{
+		float:right;
+		max-height:35px !important;
+		margin-top:-35px;
+		margin-right:5px;
+	}
+
+.contentLabels
+	{
+		padding-top:15px;
+		padding-right:10px;
+		font-family:submitButtonFont;
+		font-size:large;
+		font-style:normal;
+		font-weight:lighter !important;
+	}
+
+.easyPesaImg
+	{
+		height:80px;
+		width:105px;
+		padding-top:10px;
+	}
+
+.formFieldMobile,.formFieldAccount
+	{
+		display:block;
+		height:50px;
+		margin-bottom:3px;
+		
+	}
+.fieldTextNumber,.fieldTextAccount
+	{
+		float:left;
+		width:37%;
+		text-align:right;
+		margin-left:-10px;
+	}
+
+.inputNumber,.inputAmount
+	{
+		float:right;
+		width:63%;
+		margin-right:-5px;
+	}
+	
+.input
+	{
+		border-radius:0;
+		background-color:rgb(167,215,230);
+		border:none;
+		width:auto;
+	}	
+			
+.setting
+	{
+		color:#FFFFFF;
+		text-align:left;
+		padding-top:20px;
+	}
+
+.content
+	{
+		height:450px;
+	}
+
+
+			

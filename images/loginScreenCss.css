@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+  font-family: 'Homizio-Medium';
+  src: url('fonts/Homizio-Medium.eot') format('embedded-opentype'), url('fonts/Homizio-Medium.ttf') format('woff'), url('fonts/Homizio-Medium.ttf')  format('truetype'), url('fonts/Homizio-Medium.svg#Homizio-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.bg {
+	background-image:url(images/bg.png);
+}
+.imageHeader {
+	text-align:center;
+	margin-top:40px;
+}
+.border {
+	border-bottom: 1px solid #CCC;
+	margin-top:50px;
+}
+.image {
+	height: 142px;
+	width: 251px;
+}
+.textFields {
+	background-color: #fff;
+	font-size: 20px;
+	height: 60px;
+	text-align: center;
+	width: 350px;
+	text-shadow: 1px 1px 1px #000000;
+	border-radius: 5px 5px 5px 5px;
+	border-style: solid;
+	border-width: 1px;
+}
+.inputFields1 {
+	text-align:center;
+	margin-top: 71px;
+}
+.inputFields2 {
+	text-align:center;
+	margin-top: 18px;
+}
+.loginButton {
+	text-align:center;
+	margin-top: 45px;
+}
+.button {
+	background: #ecf92f url("images/rightArrow.png") no-repeat scroll 128px center;
+    border: 1px solid #85a21d;
+    border-radius: 30px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.65);
+    font-size: 20px;
+    height: 60px;
+    padding-left: 26px;
+    text-align: left;
+    width: 170px;
+	 font-family: 'Homizio-Medium';
+	
+}
+.footerImage{
+	text-align:right;
+	margin-top: 296px;
+	margin-bottom:1px;
+	
+	}

@@ -1,0 +1,171 @@
+@charset "UTF-8";
+/* CSS Document */
+@font-face
+{
+    font-family: submitButtonFont;
+    src:url(../fonts/medium.ttf);
+}
+.midHeader,.dataLabel,.dataReturned,.easyLoad,.confirmText,.footerTxt
+{
+    font-family:submitButtonFont;
+    font-size:medium;
+    font-style:bold;
+    font-weight:bold !important;
+}
+.ngdialog-button,.dialogDetail,.dialogHead,.dialogAmt
+{
+	font-family:submitButtonFont;
+    font-size:medium;
+}
+.head
+{
+	position: fixed;
+}
+.topHeader {
+	text-align: center;
+	width: 100%;
+	height: 93px;
+	background-image: url(../images/header3.png);
+	position: fixed;
+	background-size: cover;
+	top: 0;
+}
+.iconTlnr {
+	position: fixed;
+	height: 80px;
+	top: 0;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+.midHeader {
+	width: 100%;
+	height:50px;
+	text-align: center;
+	position: fixed;
+	top: 93px;
+	/*margin-left:535px;*/
+	background-image: url(../images/header2.png);
+	background-size: cover;
+	color: #FFF;
+	padding: 13px;/*font-size:27px;*/
+    font-style:inherit;
+}
+.confirmPage {
+	width: 100%;
+	/*height:843px;*/
+	margin-top: 153px;
+	height: 100%;
+}
+.dataLabel {
+	color: rgba(117,117,117,1);
+	font-weight: normal !important;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	float:left;
+}
+.dataReturned {
+	font-weight: normal !important;
+	text-align: left;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	float:left;
+}
+.pkrContent
+{
+    color:#903;
+    font-size:12px;
+    padding-right: 3px;
+}
+.pkr
+{
+    color:#903;
+    font-size:11px;
+    padding-right: 5px;
+    position: relative;
+    top: -3px;
+}
+.easyLoad
+{
+	color:#F00;
+}
+.showData {
+	border-bottom: thin;
+}
+.rowStyle {
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	/*margin-left: 535px;*/
+	border-bottom: #CCC 1.5px solid;
+}
+.confirmText {
+	padding-top: 10px;
+	text-align: center;
+	width: 100%;
+    padding-right:1px;
+    padding-left:1px;
+    font-size:11px;
+    font-weight: normal !important;
+    font-style: normal;
+
+}
+.confirmBtn {
+	text-align: center;
+	width: 70px;
+	height: 26px;
+	background-color: rgb(127,166,15);
+	border: none;
+	color: #FFF;
+	margin-top: 22px;/*margin-left:800px;*/
+    border-radius:0;
+}
+.footer {
+	position: fixed;
+	width:100%;
+	background-size: 100% 100%;
+	min-height:60px;
+	/*top:300px;*/
+	bottom: 0px;
+	background-image: url(../images/footer1.png);
+	background-repeat: no-repeat;
+}
+.footerLogo {
+	margin-top: 14px;
+	margin-right: 15px;
+	height:40px;
+}
+.footerTxt
+{
+	padding-top:22px;
+	padding-left:15px;
+	color:#FFF;
+}
+a, button {
+	display: block;
+	color: #333;
+	margin-bottom: 10px;
+}
+.ngdialog.ngdialog-theme-default
+{
+	display:inline-block;
+}
+/* The following 'important' styles are just here to show off trapFocus */
+button.ngdialog-button {
+	background-color: rgb(127,166,15) !important;
+	height: 27px;
+	width: 74px;
+	color: #FFF !important;
+	padding-bottom: 4px;
+    border-radius:0px !important;
+}
+.dialogHead {
+	text-align: center;
+}
+.dialogDetail {
+	text-align: center;
+}
+.dialogAmt {
+	text-align: center;
+	color: #F00 !important;
+}
